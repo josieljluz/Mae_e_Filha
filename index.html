@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos de Comida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Faça seu pedido</h1>
+        <form id="pedidoForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            
+            <div class="menu-item">
+                <h3>Feijoada - R$ 18,00</h3>
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('feijoada', -1)">-</button>
+                    <input type="number" id="feijoada" name="feijoada" min="0" value="0" readonly>
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('feijoada', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <h3>Feijão Tropeiro - R$ 12,00</h3>
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('feijaotropeiro', -1)">-</button>
+                    <input type="number" id="feijaotropeiro" name="feijaotropeiro" min="0" value="0" readonly>
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('feijaotropeiro', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <h3>Macarronada - R$ 18,00</h3>
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('macarronada', -1)">-</button>
+                    <input type="number" id="macarronada" name="macarronada" min="0" value="0" readonly>
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('macarronada', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <h3>Salpicão - R$ 18,00</h3>
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('salpicao', -1)">-</button>
+                    <input type="number" id="salpicao" name="salpicao" min="0" value="0" readonly>
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('salpicao', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <h3>Quentinhas - R$ 18,00</h3>
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('quentinhas', -1)">-</button>
+                    <input type="number" id="quentinhas" name="quentinhas" min="0" value="0" readonly>
+                    <button type="button" class="quantity-btn" onclick="adjustQuantity('quentinhas', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="total-section">
+                <h2>Total: R$ <span id="total">0,00</span></h2>
+            </div>
+            
+            <button type="submit" class="submit-btn">Enviar Pedido</button>
+        </form>
+        
+        <div id="message" class="message"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
